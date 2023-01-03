@@ -2,11 +2,13 @@ class CommentsController < ApplicationController
     # have to develop full CRUD capability for users to post, read, edit, and delete comments
     
     def create
+        byebug
         comment = Comment.create!(comments_params)
         render json: comment, status: :created
     end
 
     def index
+        # This will need to show all comments of a specific discussion_id 
     end
 
     # def edit or update?
