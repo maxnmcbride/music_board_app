@@ -5,9 +5,9 @@ Comment.destroy_all
 puts"seeds destroyed"
 
 puts"creating user seeds"
-u1 = User.create({username: "matt", password: "12345", specialty: "Audio Engineering"})
-u2 = User.create({username: "max", password: "12345", specialty: "Keyboard, Electric Bass"})
-u3 = User.create({username: "james", password: "12345", specialty: "Music God"})
+u1 = User.create({username: "matt", password_digest: "12345", specialty: "Audio Engineering"})
+u2 = User.create({username: "max", password_digest: "678910", specialty: "Keyboard, Electric Bass"})
+u3 = User.create({username: "james", password_digest: "111213", specialty: "Music God"})
 puts"finished creating user seeds"
 
 puts"creating discussion topic"
