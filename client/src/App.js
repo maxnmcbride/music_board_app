@@ -9,7 +9,11 @@ function App() {
 
   const [user, setUser] = useState(false);
   // this might be changed to javascript object
-  
+  useEffect(()=>{
+    fetch('/user')
+    .then(res => res.json())
+    .then(setUser)
+  },[])
 
 
   return (

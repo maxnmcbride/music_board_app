@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {useHistory} from 'react-router-dom'
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -7,7 +8,7 @@ function Login() {
   function handleSubmit(e) {
     e.preventDefault();
     fetch("/login", {
-        // need to create custom route to login using session data
+      // this points to a custom route in sessions controller
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -17,7 +18,7 @@ function Login() {
       if (r.ok) {
         r.json().then((user) => console.log(user));
       } else {
-        r.json().then(console.warn)
+        r.json().then()
       }
     });
   }
