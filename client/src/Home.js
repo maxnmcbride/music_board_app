@@ -1,7 +1,7 @@
 import Login from './Login';
 import SignUp from './SignUp';
 
-function Home() {
+function Home({setUser}) {
     return (
         <>
             <div className="split left">
@@ -12,7 +12,7 @@ function Home() {
             </div>
             <div className="split right">
                 <div className="centered">
-                    <Login/>
+                    <Login setUser={setUser}/>
                     <SignUp/>
                 </div>
             </div>

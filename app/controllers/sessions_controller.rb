@@ -12,6 +12,15 @@ class SessionsController < ApplicationController
         end
     end
 
+    def show
+        user = User.find_by(id: session[:user_id])
+        if user
+            render json: user, status: :ok
+        else
+            render json: {errors: ["Please log back in!"]}, status: :unauthorized
+        end 
+    end
+
     def destroy
         session.delete :user_id
         head :no_content

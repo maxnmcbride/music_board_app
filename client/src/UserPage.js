@@ -5,10 +5,10 @@ function UserPage({ user }) {
     return (
         <div>
             <nav>
-            <Link to="/"><button>Home</button></Link>
+            <Link to="/"><button>Log Out</button></Link>
                 <Link to="/discussions"><button>Discussions</button></Link>
             </nav>
-            <h1>Is the user logged in?  {user ? "Yes" : "NO"}</h1>
+            <h1>Current user: {user ? user.username : "not logged in. How'd you get in here?"}</h1>
         </div>
     )
 }

@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import {useHistory} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 
-function Login() {
+function Login({setUser}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  // hooks need to be in top level of component
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -16,12 +19,18 @@ function Login() {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => console.log(user));
+        r.json().then((user) => {
+          setUser(user)
+          navigate("/userpage")
+        });
       } else {
         r.json().then()
       }
     });
   }
+
+  // want to create it so that if the login is legit you will be directed to
+  // userpage/:id
 
   return (
     <div>

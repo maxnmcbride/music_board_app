@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   # that is if going to along with the controller action 
   post "/login", to: "sessions#create"
   post "/logout", to: "sessions#destroy"
+  get "/currentuser", to: "sessions#show"
 end
