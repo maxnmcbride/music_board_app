@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 
-function Login({ setUser }) {
+function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   function handleSubmit(e) {
     e.preventDefault();
     fetch("/login", {
+        // need to create custom route to login using session data
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -14,7 +15,9 @@ function Login({ setUser }) {
       body: JSON.stringify({ username, password }),
     }).then((r) => {
       if (r.ok) {
-        r.json().then((user) => setUser(user));
+        r.json().then((user) => console.log(user));
+      } else {
+        r.json().then(console.warn)
       }
     });
   }
