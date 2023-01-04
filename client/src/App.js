@@ -1,8 +1,9 @@
 import './App.css';
-import Home from './Home';
 import { Route, Routes } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
+import Home from './Home';
 import UserPage from './UserPage';
+import Discussions from './Discussions';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/userpage" element={<UserPage user={user}/>} />
+      <Route path="/discussions" element={<Discussions/>} />
     </Routes>
   );
 }
