@@ -8,7 +8,8 @@ import Discussions from './Discussions';
 function App() {
 
   const [user, setUser] = useState(false);
-  // this might be changes to javascript object
+  // this might be changed to javascript object
+  
 
 
   return (
