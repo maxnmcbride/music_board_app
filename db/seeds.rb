@@ -11,11 +11,11 @@ u3 = User.create({username: "james", password: "111213", specialty: "Music God"}
 puts"finished creating user seeds"
 
 puts"creating discussion topic"
-d1 = Discussion.create({name_of_topic:"Gear for sale"})
-d2 = Discussion.create({name_of_topic:"Live sound engineer"})
-d3 = Discussion.create({name_of_topic:"Guitarist needed"})
-d4 = Discussion.create({name_of_topic: "Singer needed"})
-d5 = Discussion.create({name_of_topic: "Drummer needed"})
+d1 = Discussion.create({name_of_topic:"Gear For Sale"})
+d2 = Discussion.create({name_of_topic:"Live Sound Engineer"})
+d3 = Discussion.create({name_of_topic:"Guitarist Needed"})
+d4 = Discussion.create({name_of_topic: "Singer Needed"})
+d5 = Discussion.create({name_of_topic: "Drummer Needed"})
 puts"finished creating discussioin topic"
 
 puts"creating comment"

@@ -25,7 +25,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home setUser={setUser} />} />
-      <Route path="/userpage" element={<UserPage user={user} />} />
+      <Route path="/userpage" element={<UserPage user={user} setUser={setUser}/>} />
       <Route path="/discussions" element={<Discussions setSelectedDiscussion={setSelectedDiscussion}/>} />
       <Route path="/eachdiscussion" element={<EachDiscussion selectedDiscussion={selectedDiscussion}/>}/>
     </Routes>

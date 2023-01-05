@@ -1,14 +1,17 @@
 import { Link, useNavigate } from 'react-router-dom';
+import {useEffect} from 'react-router-dom';
 
-function UserPage({ user }) {
+function UserPage({ user, setUser }) {
 
     console.log(user)
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const handleLogOut = () => {
         //send delete request
+        fetch("/logout",{method: 'DELETE'})
         // change state to original values
-        // redirect to home page DONE
+        setUser(false)
         navigate("/")
+        // redirect to home page DONE
     }
     return (
         <div>
