@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 function Discussions({setSelectedDiscussion}) {
     const [discussions, setDiscussions] = useState([])
 
+
     useEffect(() => {
         fetch("/discussions")
             .then(r => r.json())

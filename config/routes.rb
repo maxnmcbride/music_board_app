@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :comments
-  post "/postcomment", to: "comments#create"
   # post "/createcomment", to: 
   resources :users
   resources :discussions

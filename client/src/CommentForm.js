@@ -1,22 +1,22 @@
 import React, {useState} from 'react';
 
-function CommentForm({selectedDiscussion}) {
+function CommentForm({selectedDiscussion, user}) {
 
-  console.log(selectedDiscussion)
+  console.log(user)
     
     const [comment, setComment] = useState("")
 
     const handleSubmit = (e) => {
         e.preventDefault()
         let newComment = {
-            comment: comment,
-            user_id: ,
-            discussion_id:,
+            post: comment,
+            user_id: user.id,
+            discussion_id:selectedDiscussion.id
         }
 
     // build out backend routes and controller for comments
     // NEED FULL CRUD AND CONNECTION TO BACKEND
-    fetch("/postcomment",{
+    fetch("/comments",{
       method: "POST",
       headers: {"Content-Type" : "application/json"},
       body: JSON.stringify(newComment)
