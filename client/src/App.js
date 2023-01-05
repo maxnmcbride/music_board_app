@@ -20,12 +20,14 @@ function App() {
       });
   }, []);
 
+  const [selectedDiscussion, setSelectedDiscussion]=useState(false);
+
   return (
     <Routes>
       <Route path="/" element={<Home setUser={setUser} />} />
       <Route path="/userpage" element={<UserPage user={user} />} />
-      <Route path="/discussions" element={<Discussions />} />
-      <Route path="/eachdiscussion" element={<EachDiscussion/>}/>
+      <Route path="/discussions" element={<Discussions setSelectedDiscussion={setSelectedDiscussion}/>} />
+      <Route path="/eachdiscussion" element={<EachDiscussion selectedDiscussion={selectedDiscussion}/>}/>
     </Routes>
   );
 }

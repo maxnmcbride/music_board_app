@@ -30,7 +30,6 @@ function CommentForm({postedComments}) {
     return (
         <form onSubmit={handleSubmit} className="comment-form">
 
-
         <label htmlFor="comment">username will go here</label>
         <input comment="comment" value={comment} placeholder='New Comment' onChange= {(e) => setComment(e.target.value)}/>
   

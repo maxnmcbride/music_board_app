@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import EachDiscussion from './EachDiscussion';
 
-function Discussions() {
+function Discussions({setSelectedDiscussion}) {
     const [discussions, setDiscussions] = useState([])
 
     useEffect(() => {
@@ -15,7 +15,7 @@ function Discussions() {
         discussions.map((discussionObj) => {
             return (
                 <>
-                    <Link to="/EachDiscussion"><h2>{discussionObj.name_of_topic}</h2></Link>
+                    <Link to="/eachdiscussion"><h2 onClick={()=>setSelectedDiscussion(discussionObj)}>{discussionObj.name_of_topic}</h2></Link>
                     {discussionObj.comments.map((commentObj) => {
                         return (
                             <>
