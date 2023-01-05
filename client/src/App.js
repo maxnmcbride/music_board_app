@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import UserPage from './UserPage';
 import Discussions from './Discussions';
+import EachDiscussion from './EachDiscussion';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
       <Route path="/" element={<Home setUser={setUser} />} />
       <Route path="/userpage" element={<UserPage user={user} />} />
       <Route path="/discussions" element={<Discussions />} />
+      <Route path="/eachdiscussion" element={<EachDiscussion/>}/>
     </Routes>
   );
 }

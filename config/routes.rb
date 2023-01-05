@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :comments
+  # post "/createcomment", to: 
   resources :users
   resources :discussions
   # we are using post because we are SENDING data

@@ -14,6 +14,8 @@ puts"creating discussion topic"
 d1 = Discussion.create({name_of_topic:"Gear for sale"})
 d2 = Discussion.create({name_of_topic:"Live sound engineer"})
 d3 = Discussion.create({name_of_topic:"Guitarist needed"})
+d4 = Discussion.create({name_of_topic: "Singer needed"})
+d5 = Discussion.create({name_of_topic: "Drummer needed"})
 puts"finished creating discussioin topic"
 
 puts"creating comment"
@@ -27,6 +29,6 @@ Comment.create({post: "I do bar gigs and Bar Mitzvahs", user_id: u2.id, discussi
 Comment.create({post: "I will play keys on studio sessions", user_id: u3.id, discussion_id: d2.id})
 
 Comment.create({post: "Have been shredding my archtop for years. Hit me up if you want a blues screamer", user_id: u3.id, discussion_id: d3.id})
-Comment.create({post: "Have been shredding my archtop for years. Hit me up if you want a blues screamer", user_id: u3.id, discussion_id: d3.id})
+Comment.create({post: "I am a drummer", user_id: u3.id, discussion_id: d5.id})
 Comment.create({post: "Looking for a hair metal guitarist for studio album. 4 hours $35/hr", user_id: u2.id, discussion_id: d3.id})
 puts "✅ Done seeding!"

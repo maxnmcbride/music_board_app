@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useNavigate} from 'react-router-dom'
 
+// what props do we need to pass?
 function CommentForm({postedComments}) {
     
     const [comment, setComment] = useState("")
@@ -13,7 +14,9 @@ function CommentForm({postedComments}) {
             comment: comment,
         }
 
-    fetch("http://localhost:4000/comments",{
+    // build out backend routes and controller for comments
+    // NEED FULL CRUD AND CONNECTION TO BACKEND
+    fetch("/createcomment",{
       method: "POST",
       headers: {"Content-Type" : "application/json"},
       body: JSON.stringify(newComment)
@@ -28,7 +31,7 @@ function CommentForm({postedComments}) {
         <form onSubmit={handleSubmit} className="comment-form">
 
 
-        <label htmlFor="comment">${username}: </label>
+        <label htmlFor="comment">username will go here</label>
         <input comment="comment" value={comment} placeholder='New Comment' onChange= {(e) => setComment(e.target.value)}/>
   
         <button type="submit">Comment</button>

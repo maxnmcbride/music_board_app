@@ -1,20 +1,42 @@
-import { useState, Link } from 'react-router-dom';
-import Comment from './Comment';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import EachDiscussion from './EachDiscussion';
 
-function Discussions(){
-    return(
+function Discussions() {
+    const [discussions, setDiscussions] = useState([])
+
+    useEffect(() => {
+        fetch("/discussions")
+            .then(r => r.json())
+            .then(setDiscussions)
+    }, [])
+
+    const mappedDiscussions =
+        discussions.map((discussionObj) => {
+            return (
+                <>
+                    <Link to="/EachDiscussion"><h2>{discussionObj.name_of_topic}</h2></Link>
+                    {discussionObj.comments.map((commentObj) => {
+                        return (
+                            <>
+                                <h4 key={commentObj.id}>{commentObj.user.username}: {commentObj.post}</h4>
+                            </>
+                        )
+                    })}
+                </>
+            )
+
+        })
+
+    return (
         <div>
             <nav>
                 {/* <Link to="/"><button>Home</button></Link> */}
                 <Link to="/userpage"><button>My Profile</button></Link>
+                {/* <Link to="/discussions/:discussionName">{discussion.name}</Link> */}
             </nav>
             <h1>All Forums</h1>
-            
-            <div className="comment_form">
-               <Comment/>
-               {/* we need to pass user id so only logged in users can leave comment
-               and it will allow other users to see user */}
-            </div>
+            {mappedDiscussions}
 
             {/* WE need a discussion board built out here, we need
             A text input
