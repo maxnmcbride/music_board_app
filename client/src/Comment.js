@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
+import CommentForm from "./CommentForm";
 
-function Comment(){
+function Comment() {
     // pass user prop
-    const [comments, setComments] = useState([])
+    // const [comments, setComments] = useState([])
+    // console.log(comments)
 
-    useEffect(()=>{
+    // fetch to backend server build out CRUD, Need to create 
+    // custom routes in rails
 
-        // fetch to backend server build out CRUD, Need to create 
-        // custom routes in rails
-        fetch("/postcomment")
-        .then
-
-    }, [])
-
-    return(
-    <div>
-        <h1>Comments</h1>
-    </div>
+    return (
+        <div>
+            <h1 className="comments-title">Comments</h1>
+            <div className="comment-form-title">Write Comment</div>
+                <CommentForm/>
+            <div className="comments-container">
+            </div>
+        </div>
     )
 }
 export default Comment

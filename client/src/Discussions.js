@@ -11,7 +11,6 @@ function Discussions(){
             <h1>All Forums</h1>
             
             <div className="comment_form">
-               <h1>Hello</h1>
                <Comment/>
                {/* we need to pass user id so only logged in users can leave comment
                and it will allow other users to see user */}

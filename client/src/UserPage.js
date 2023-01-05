@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom';
 
 function UserPage({ user }) {
 
+    console.log(user)
+
     return (
         <div>
             <div>
