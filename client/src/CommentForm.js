@@ -20,7 +20,7 @@ function CommentForm({postedComments}) {
     })
     .then(r => r.json())
     .then((newComment) => { 
-      postedCharacters(newComment)
+      postedComments(newComment)
       navigate("/Comments")})
     }
 
@@ -29,7 +29,7 @@ function CommentForm({postedComments}) {
 
 
         <label htmlFor="comment">${username}: </label>
-        <input comment="comment" value={name} placeholder='New Comment' onChange= {(e) => setComment(e.target.value)}/>
+        <input comment="comment" value={comment} placeholder='New Comment' onChange= {(e) => setComment(e.target.value)}/>
   
         <button type="submit">Comment</button>
   
