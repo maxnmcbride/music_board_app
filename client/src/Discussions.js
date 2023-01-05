@@ -1,13 +1,21 @@
-import { Link } from 'react-router-dom';
+import { useState, Link } from 'react-router-dom';
+import Comment from './Comment';
 
 function Discussions(){
     return(
         <div>
             <nav>
-                <Link to="/"><button>Home</button></Link>
+                {/* <Link to="/"><button>Home</button></Link> */}
                 <Link to="/userpage"><button>My Profile</button></Link>
             </nav>
-            <h1>Welcome to all discussions</h1>
+            <h1>All Forums</h1>
+            
+            <div className="comment_form">
+               <h1>Hello</h1>
+               <Comment/>
+               {/* we need to pass user id so only logged in users can leave comment
+               and it will allow other users to see user */}
+            </div>
 
             {/* WE need a discussion board built out here, we need
             A text input

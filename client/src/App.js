@@ -13,14 +13,13 @@ function App() {
 
   // this use effect is to make sure that the user stays logged in
   useEffect(() => {
-    fetch("/currentuser").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user))
-      }
-    });
+    fetch("/currentuser")
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user))
+        }
+      });
   }, []);
-
-
 
   return (
     <Routes>

@@ -29,9 +29,6 @@ function Login({setUser}) {
     });
   }
 
-  // want to create it so that if the login is legit you will be directed to
-  // userpage/:id
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
