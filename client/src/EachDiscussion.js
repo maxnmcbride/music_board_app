@@ -1,8 +1,17 @@
 import CommentForm from "./CommentForm"
 import { Link } from 'react-router-dom';
 
-function EachDiscussion({selectedDiscussion}) {
-    console.log(selectedDiscussion.name_of_topic)
+// build fetch to get comments
+// displayed comments will have to have discussions_id~comment_id
+
+
+function EachDiscussion({ selectedDiscussion }) {
+    const comment = selectedDiscussion.comments.map((commentObj) => {
+        return (
+            <> <h4 key={commentObj.id}>{commentObj.user.username}: {commentObj.post}</h4> </>
+        )
+    })
+
     return (
         <div>
             <nav>
@@ -10,7 +19,8 @@ function EachDiscussion({selectedDiscussion}) {
                 <Link to="/discussions"><button>Discussions</button></Link>
             </nav>
             <h1>{selectedDiscussion.name_of_topic}</h1>
-            <CommentForm />
+            {comment}
+            <CommentForm selectedDiscussion={selectedDiscussion}/>
         </div>
     )
 }

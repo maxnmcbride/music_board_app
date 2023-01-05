@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import EachDiscussion from './EachDiscussion';
 
 function Discussions({setSelectedDiscussion}) {
     const [discussions, setDiscussions] = useState([])
@@ -16,13 +15,6 @@ function Discussions({setSelectedDiscussion}) {
             return (
                 <>
                     <Link to="/eachdiscussion"><h2 onClick={()=>setSelectedDiscussion(discussionObj)}>{discussionObj.name_of_topic}</h2></Link>
-                    {discussionObj.comments.map((commentObj) => {
-                        return (
-                            <>
-                                <h4 key={commentObj.id}>{commentObj.user.username}: {commentObj.post}</h4>
-                            </>
-                        )
-                    })}
                 </>
             )
 
@@ -31,9 +23,7 @@ function Discussions({setSelectedDiscussion}) {
     return (
         <div>
             <nav>
-                {/* <Link to="/"><button>Home</button></Link> */}
                 <Link to="/userpage"><button>My Profile</button></Link>
-                {/* <Link to="/discussions/:discussionName">{discussion.name}</Link> */}
             </nav>
             <h1>All Forums</h1>
             {mappedDiscussions}

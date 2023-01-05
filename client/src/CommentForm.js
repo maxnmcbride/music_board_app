@@ -1,30 +1,29 @@
 import React, {useState} from 'react';
-import {useNavigate} from 'react-router-dom'
 
-// what props do we need to pass?
-function CommentForm({postedComments}) {
+function CommentForm({selectedDiscussion}) {
+
+  console.log(selectedDiscussion)
     
     const [comment, setComment] = useState("")
-
-    let navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
         let newComment = {
             comment: comment,
+            user_id: ,
+            discussion_id:,
         }
 
     // build out backend routes and controller for comments
     // NEED FULL CRUD AND CONNECTION TO BACKEND
-    fetch("/createcomment",{
+    fetch("/postcomment",{
       method: "POST",
       headers: {"Content-Type" : "application/json"},
       body: JSON.stringify(newComment)
     })
     .then(r => r.json())
     .then((newComment) => { 
-      postedComments(newComment)
-      navigate("/Comments")})
+})
     }
 
     return (
