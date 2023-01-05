@@ -28,18 +28,6 @@ function Discussions({setSelectedDiscussion}) {
             </nav>
             <h1>All Forums</h1>
             {mappedDiscussions}
-
-            {/* WE need a discussion board built out here, we need
-            A text input
-            A discussion board
-            3 buttons for a Comment(create), Delete (delete/destroy?), and Edit (patch) 
-            
-            Look at reddit or other discussion boards to see how they are formatted
-
-
-            to view in browser http://localhost:4000/discussions
-            */}
-
         </div>
     )
 }

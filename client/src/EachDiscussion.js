@@ -1,15 +1,21 @@
 import CommentForm from "./CommentForm"
 import { Link } from 'react-router-dom';
 
-// build fetch to get comments
-// displayed comments will have to have discussions_id~comment_id
-
 // build out delete and edit in here
 
 function EachDiscussion({ selectedDiscussion, user }) {
-    const comment = selectedDiscussion.comments.map((commentObj) => {
+    const handleDelete = (commentObj) => {
+        console.log(commentObj)
+            //we want to send delete request
+            //remove from state 
+    }
+
+    const commentsArray = selectedDiscussion.comments.map((commentObj) => {
         return (
-            <> <h4 key={commentObj.id}>{commentObj.user.username}: {commentObj.post}</h4> </>
+            <> 
+            <h4 key={commentObj.id}>{commentObj.user.username}: {commentObj.post}</h4>
+            <button onClick={() => handleDelete(commentObj)}>x</button> 
+            </>
         )
     })
 
@@ -20,7 +26,9 @@ function EachDiscussion({ selectedDiscussion, user }) {
                 <Link to="/discussions"><button>Discussions</button></Link>
             </nav>
             <h1>{selectedDiscussion.name_of_topic}</h1>
-            {comment}
+            <div>
+            {commentsArray}
+            </div>
             <CommentForm selectedDiscussion={selectedDiscussion} user={user}/>
         </div>
     )
