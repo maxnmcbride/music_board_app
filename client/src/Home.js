@@ -9,7 +9,7 @@ function Home({setUser}) {
             <div className="split left">
         <button onClick={()=>{
             navigate("/userpage")
-        }}>Click Me!</button>
+        }}>My Profile</button>
                 <div className="centered">
                     <h1>Crescendo</h1>
                     <p>Connect with fellow musicians</p>
