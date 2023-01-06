@@ -9,14 +9,11 @@ class CommentsController < ApplicationController
         render json: comment, status: :created
     end
 
-    # def index
-    #     # This will need to show all comments of a specific discussion_id 
-    # end
-
-    # def edit or update?
-    # end
-
-    # does this need to be changed to destroy?
+    def update
+        comment= Comment.find_by(id: params[:id])
+        comment.update(comments_params)
+        render json: comment, status: :ok
+    end
     
     def destroy
         comment = Comment.find_by(id: params[:id])

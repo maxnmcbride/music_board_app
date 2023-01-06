@@ -7,6 +7,17 @@ function Discussion() {
     const { id } = param
     const [discussion, setDiscussion] = useState({})
 
+    console.log(discussion.comments)
+
+    const editCommentInDiscussion = (freshComment) => {
+        // console.log('ready to change this comment', freshComment)
+        const discussionComments = discussion.comments.map((commentObj)=>{
+            return  commentObj.id == freshComment.id ? freshComment : commentObj
+        })
+        const copyOfDiscussion = { ...discussion, comments: discussionComments}
+        setDiscussion(copyOfDiscussion)
+    }
+
     useEffect(() => {
         fetch(`/discussions/${id}`)
             .then(r => r.json())
@@ -19,18 +30,34 @@ function Discussion() {
         // console.log("totally ready to add this comment to discussion", comment )
     }
 
-    const [showEditForm, setShowEdit]=useState(false)
+    const [showEditForm, setShowEdit] = useState(false)
 
     const showForm = () => setShowEdit(!showEditForm);
 
-    const Test = () => <div>Test is functioning</div>
 
-    const EditForm = () => {
+    const EditForm = (comment) => {
+        const [newComment, setNewComment] = useState(comment.comment.post)
+        const patchComment = (e) => {
+            e.preventDefault()
+            fetch(`/comments/${comment.comment.id}`,
+                {
+                    method: "PATCH",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        post: newComment
+                    })
+                })
+                .then(r => r.json())
+                .then((updatedComment) => {
+                    editCommentInDiscussion(updatedComment)
+                })
+        }
+
         return (
             <div>
-                <form>
-                    <input placeholder="Edit Comment" />
-                    <input type="submit" value="Submit" />
+                <form onSubmit={patchComment}>
+                    <input placeholder={comment.comment.post} onChange={(e) => { setNewComment(e.target.value) }} />
+                    <input type="submit" value="Edit" />
                 </form>
             </div>
         )
@@ -45,10 +72,10 @@ function Discussion() {
                     <h1 className="discussion_title">{discussion.name_of_topic}</h1>
                     {Object.keys(discussion).length > 0 ?
                         discussion.comments.map((c, i) => <div key={i}>
-                            <div onClick={showForm} className="comment">
-                                <h4>{c.post}</h4>
-                                {showEditForm? <EditForm /> : null}
+                            <div className="comment">
+                                <h4 onClick={showForm}>{c.post}</h4>
                             </div>
+                            {showEditForm ? <EditForm comment={c} /> : null}
                             <h5 className="comment_user">Posted by: {c.user.username.toUpperCase()}</h5>
                             <button onClick={() => {
                                 fetch(`/comments/${c.id}`, { method: 'DELETE' })
