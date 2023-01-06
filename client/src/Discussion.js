@@ -27,7 +27,7 @@ function Discussion() {
            { Object.keys(discussion).length > 0 ?
            discussion.comments.map( (c, i) => <div key={i}>
             <h4 className="comment">{c.post}</h4>
-            <h5 className="comment-user">{c.user.username}</h5>
+            <h5 className="comment-user">Posted by: {c.user.username.toUpperCase()}</h5>
             <button onClick={ () => {
                 fetch( `/comments/${c.id}`, { method: 'DELETE' } )
 
