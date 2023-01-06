@@ -172,6 +172,10 @@ align-items: center;
   padding: 3rem;
 }
 
-.comment-user{
-  color: chartreuse;
+.comment_user{
+  color: lightgreen;
+}
+
+.comment_label{
+  color: lightgreen;
 }

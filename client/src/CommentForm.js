@@ -27,7 +27,7 @@ function CommentForm({discussion}) {
   return (
     <div className="new_comment">
       <form onSubmit={handleSubmit} className="comment-form">
-        <label htmlFor="comment">username will go here</label>
+        <label className="comment_label" htmlFor="comment">username will go here</label>
         <input comment="comment" value={comment} placeholder='New Comment' onChange={(e) => setComment(e.target.value)} />
         <button type="submit">Comment</button>
       </form>
