@@ -1,10 +1,20 @@
 import { useEffect, useState } from "react";
 
-function CommentForm({discussion, user}) {
+function CommentForm({discussion}) {
   const [comment, setComment] = useState("");
+
+
+  console.log(discussion)
+
+  // const user = discussion.map((discussionObj)=>{
+  //   console.log(discussionObj)
+  // })
+
+  // console.log(user)
 
   function handleSubmit(e) {
     e.preventDefault();
+
     fetch("/comments", {
       method: "POST",
       headers: {
@@ -12,7 +22,7 @@ function CommentForm({discussion, user}) {
       },
       body: JSON.stringify({
         post: comment,
-        user_id: user.id,
+        // user_id: user.id,
         discussion_id: discussion.id
       }),
     }).then((r) => {

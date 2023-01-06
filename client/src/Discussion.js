@@ -7,14 +7,12 @@ function Discussion() {
     const param = useParams()
     const { id } = param
     const [discussion, setDiscussion] = useState({})
-    // console.log("discussion:", discussion)
 
     useEffect(() => {
         fetch(`/discussions/${id}`)
             .then(r => r.json())
             .then(setDiscussion)
     }, [])
-
 
     return (
         <div>
@@ -39,7 +37,7 @@ function Discussion() {
            : 'no' }
            </div>
         </div>
-        <CommentForm/>
+        <CommentForm discussion={discussion} />
         </div>
        
     )
