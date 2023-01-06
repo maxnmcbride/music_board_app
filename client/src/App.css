@@ -163,3 +163,11 @@ align-items: center;
   justify-content: space-evenly;
   padding: .5rem .7rem;
 }
+
+.new_comment{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;  
+  padding: 3rem;
+}

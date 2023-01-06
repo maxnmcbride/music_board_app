@@ -38,6 +38,7 @@ function Discussion() {
            : 'no' }
            </div>
         </div>
+        <CommentForm/>
         </div>
        
     )
