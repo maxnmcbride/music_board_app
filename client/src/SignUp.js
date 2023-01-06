@@ -54,7 +54,7 @@ function SignUp() {
           onChange={(e) => setPasswordConfirmation(e.target.value)}
           autoComplete="current-password"
         />
-        <label className="signup_form" htmlFor="specialty">Specialty</label>
+        <label className="signup_form" htmlFor="specialty">Musical Specialty</label>
         <input
           type="text"
           id="specialty"
