@@ -32,7 +32,7 @@ function Discussions({setSelectedDiscussion}) {
                 
             </nav>
             <h1 className="discussions_page">All Discussions</h1>
-            <h5 className="discussions_page">{mappedDiscussions}</h5>
+            <h5 className="discussions_list">{mappedDiscussions}</h5>
         </div>
     )
 }
