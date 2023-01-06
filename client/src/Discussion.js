@@ -34,11 +34,18 @@ console.log(Object.keys(discussion) > 0 && discussion.comments.length)
 
     return (
         <div>
-            <nav>
-                <Link to="/board"><button>Back to Discussions</button></Link>
-            </nav>
-            {discussion.name_of_topic}
-            {commentsArray}
+           { Object.keys(discussion).length > 0 ?
+           discussion.comments.map( (c, i) => <div key={i}>
+            <h1>{c.post}</h1>
+            <button onClick={ () => {
+                fetch( `/comments/${c.id}`, { method: 'DELETE' } )
+
+                setDiscussion( d => {
+                    return { ...d, comments: d.comments.filter( comm => comm.id !== c.id ) }
+                } )
+            } }>DELETE</button>
+           </div>)
+           : 'no' }
         </div>
     )
 }
