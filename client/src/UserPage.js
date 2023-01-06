@@ -18,7 +18,7 @@ function UserPage({ user, setUser }) {
             <div>
                 <nav>
                     <button onClick={handleLogOut}>Log Out</button>
-                    <Link to="/discussions"><button>Discussions</button></Link>
+                    <Link to="/board"><button>Discussions</button></Link>
                 </nav>
                 <h1>Current user: {user ? user.username : "not logged in. How'd you get in here?"}</h1>
             </div>

@@ -4,4 +4,11 @@ class DiscussionsController < ApplicationController
     def index
         render json: Discussion.all
     end
+    
+    def show
+        # debugger
+        discussion = Discussion.find(params[:id])
+        render json: discussion
+    end
+
 end

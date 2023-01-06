@@ -5,6 +5,7 @@ import Home from './Home';
 import UserPage from './UserPage';
 import Discussions from './Discussions';
 import EachDiscussion from './EachDiscussion';
+import Discussion from './Discussion';
 
 function App() {
 
@@ -20,14 +21,17 @@ function App() {
       });
   }, []);
 
+
+
   const [selectedDiscussion, setSelectedDiscussion]=useState(false);
 
   return (
     <Routes>
-      <Route path="/" element={<Home setUser={setUser} />} />
-      <Route path="/userpage" element={<UserPage user={user} setUser={setUser}/>} />
-      <Route path="/discussions" element={<Discussions setSelectedDiscussion={setSelectedDiscussion}/>} />
-      <Route path="/eachdiscussion" element={<EachDiscussion user={user} selectedDiscussion={selectedDiscussion}/>}/>
+      <Route index element={<Home setUser={setUser} />} />
+      <Route path="userpage" element={<UserPage user={user} setUser={setUser}/>} />
+      <Route path="board" element={<Discussions setSelectedDiscussion={setSelectedDiscussion}/>} />
+      <Route path="eachdiscussion" element={<EachDiscussion user={user} setSelectedDiscussion={setSelectedDiscussion} selectedDiscussion={selectedDiscussion}/>}/>
+      <Route path="board/:id" element={<Discussion/>}/>
     </Routes>
   );
 }

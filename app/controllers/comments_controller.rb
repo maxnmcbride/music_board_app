@@ -13,6 +13,8 @@ class CommentsController < ApplicationController
     # def edit or update?
     # end
 
+    # does this need to be changed to destroy?
+    
     def destroy
         comment = Comment.find_by(id: params[:id])
         if comment

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 function Discussions({setSelectedDiscussion}) {
     const [discussions, setDiscussions] = useState([])
 
-
+// do we need bring this fetch into app?
     useEffect(() => {
         fetch("/discussions")
             .then(r => r.json())
@@ -15,7 +15,7 @@ function Discussions({setSelectedDiscussion}) {
         discussions.map((discussionObj) => {
             return (
                 <>
-                    <Link to="/eachdiscussion"><h2 onClick={()=>setSelectedDiscussion(discussionObj)}>{discussionObj.name_of_topic}</h2></Link>
+                    <Link to={`/board/${discussionObj.id}`}><h2 onClick={()=>setSelectedDiscussion(discussionObj)}>{discussionObj.name_of_topic}</h2></Link>
                 </>
             )
 
@@ -26,7 +26,7 @@ function Discussions({setSelectedDiscussion}) {
             <nav>
                 <Link to="/userpage"><button>My Profile</button></Link>
             </nav>
-            <h1>All Forums</h1>
+            <h1>All Discussions</h1>
             {mappedDiscussions}
         </div>
     )
