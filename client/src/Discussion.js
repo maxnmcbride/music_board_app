@@ -1,5 +1,6 @@
 import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
+import CommentForm from "./CommentForm"
 
 
 function Discussion() {
@@ -14,40 +15,29 @@ function Discussion() {
             .then(setDiscussion)
     }, [])
 
-    const handleDelete = (commentObj) => {
-        console.log(commentObj)
-        //we want to send delete request
-        //remove from state 
-        //send delete request
-        // fetch(`/comments/${commentObj.id}`, { method: 'DELETE' })
-        // change state to original values
-    }
-console.log(Object.keys(discussion) > 0 && discussion.comments.length)
-    const commentsArray = Object.keys(discussion) > 0 && discussion.comments.map((commentObj) => {
-        return (
-            <div key={commentObj.id}>
-                <h4 key={commentObj.id}>{commentObj.user.username}: {commentObj.post}</h4>
-                <button onClick={() => handleDelete(commentObj)}>x</button>
-            </div>
-        )
-    })
 
     return (
-        <div>
+        <div className="discussion_pages">
+        <div className="comment_section">
+            <h1 className="discussion_title">{discussion.name_of_topic}</h1>
            { Object.keys(discussion).length > 0 ?
            discussion.comments.map( (c, i) => <div key={i}>
-            <h1>{c.post}</h1>
+            <h4 className="comment">{c.post}</h4>
             <button onClick={ () => {
                 fetch( `/comments/${c.id}`, { method: 'DELETE' } )
 
                 setDiscussion( d => {
                     return { ...d, comments: d.comments.filter( comm => comm.id !== c.id ) }
                 } )
-            } }>DELETE</button>
+            } } className="delete">DELETE</button>
            </div>)
            : 'no' }
+           </div>
         </div>
+       
     )
 }
+
+
 
 export default Discussion

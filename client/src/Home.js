@@ -7,12 +7,12 @@ function Home({setUser}) {
     return (
         <>
             <div className="split left">
-        <button onClick={()=>{
+        <button className="profile_button" onClick={()=>{
             navigate("/userpage")
-        }}>My Profile</button>
+        }}>Go To My Profile</button>
                 <div className="centered">
-                    <h1>Crescendo</h1>
-                    <p>Connect with fellow musicians</p>
+                    <h1 className="title">Crescendo</h1>
+                    <p className="description">Connect with fellow musicians</p>
                 </div>
             </div>
             <div className="split right">

@@ -1,5 +1,7 @@
 
-
+body {
+  background-color: black;
+}
 .split {
   height: 100%;
   width: 50%;
@@ -12,12 +14,11 @@
 
 .left {
   left: 0;
-  background-color: bisque;
 }
 
 .right {
   right: 0;
-  background-color: bisque;
+
 }
 
 .centered {
@@ -28,11 +29,118 @@
   text-align: center;
 }
 
-.login-form{
-    
+.title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  justify-content: space-evenly;
+  font-size: 100px;
+  color: orange;
+  font-family: fantasy;
+  height: 10vh;
 }
 
-.discussion{
-  border: 3px solid lightskyblue;
+.description{
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  justify-content: space-evenly;
+  font-size: 25px;  
+  color: aqua;
+  font-family: fantasy;
+}
+
+.profile_button{
+  display: flex;
+  flex-direction: row;
+  align-items: center;  
+  justify-content: space-evenly;
+  padding: .5rem .7rem;
+}
+
+.login_title{
+  color: chartreuse;
+}
+
+.login_form{
+display: flex;
+flex-direction: row;
+color: chartreuse;
+}
+
+.login_button{
+  display: flex;
+  flex-direction: row;
+}
+
+.signup_title{
+color: gold;
+}
+
+.signup_form{
+  display: flex;
+  flex-direction: row;
+  color: gold;
+}
+
+.signup_button{
+  display: flex;
+  flex-direction: row;  
+}
+
+.discussions_page {
+  color: yellow;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comment_section{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.comment{
+  border: 1px solid lightgreen;
+  height: 75px;
+  width: 750px;
+  color: lightgreen;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.delete{
+  border: 2px solid red;
+  color: red;
+  background-color: black;
+}
+
+.discussion_pages{
+display: flex;
+flex-direction: column;
+align-items: center;
   
+}
+
+.discussion_title{
+  color: aqua;
+}
+
+.user_profile{
+  color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.links{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 2px solid white;
+  padding: .5rem .7rem;
 }

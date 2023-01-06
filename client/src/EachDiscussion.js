@@ -25,7 +25,7 @@ function EachDiscussion({ setSelectedDiscussion, selectedDiscussion, user }) {
 
     return (
         <div>
-            <nav>
+            <nav className="links">
                 <Link to="/userpage"><button>My Profile</button></Link>
                 <Link to="/board"><button>Back to Discussions</button></Link>
             </nav>
