@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react';
 import Home from './Home';
 import UserPage from './UserPage';
 import Discussions from './Discussions';
-import EachDiscussion from './EachDiscussion';
 import Discussion from './Discussion';
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
       <Route index element={<Home setUser={setUser} />} />
       <Route path="userpage" element={<UserPage user={user} setUser={setUser}/>} />
       <Route path="board" element={<Discussions setSelectedDiscussion={setSelectedDiscussion}/>} />
-      <Route path="eachdiscussion" element={<EachDiscussion user={user} setSelectedDiscussion={setSelectedDiscussion} selectedDiscussion={selectedDiscussion}/>}/>
       <Route path="board/:id" element={<Discussion/>}/>
     </Routes>
   );
