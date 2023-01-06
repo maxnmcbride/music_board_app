@@ -4,14 +4,6 @@ function CommentForm({discussion}) {
   const [comment, setComment] = useState("");
 
 
-  console.log(discussion)
-
-  // const user = discussion.map((discussionObj)=>{
-  //   console.log(discussionObj)
-  // })
-
-  // console.log(user)
-
   function handleSubmit(e) {
     e.preventDefault();
 
@@ -21,8 +13,8 @@ function CommentForm({discussion}) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
+        // user_id is being handled on the back end
         post: comment,
-        // user_id: user.id,
         discussion_id: discussion.id
       }),
     }).then((r) => {
