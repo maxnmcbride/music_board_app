@@ -17,6 +17,10 @@ function Discussion() {
 
 
     return (
+        <div>
+            <Link className="links" to="/"><button>Home</button></Link>
+            <Link className="links" to="/userpage"><button>My Profile</button></Link>
+            <Link className="links" to="/board"><button>Discussions</button></Link>
         <div className="discussion_pages">
         <div className="comment_section">
             <h1 className="discussion_title">{discussion.name_of_topic}</h1>
@@ -33,6 +37,7 @@ function Discussion() {
            </div>)
            : 'no' }
            </div>
+        </div>
         </div>
        
     )

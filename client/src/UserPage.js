@@ -23,7 +23,7 @@ function UserPage({ user, setUser }) {
 
                     <button onClick={handleLogOut}>Log Out</button>
                 </nav>
-                <h1 className="user_profile">Current User: {user ? user.username : "Hey! You're not logged in. How'd you get in here?"}</h1>
+                <h1 className="user_profile">CURRENT USER: {user ? user.username : "Hey! You're not logged in! How'd you get in here?"}</h1>
             </div>
         </div>
     )
