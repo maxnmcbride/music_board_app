@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function Home({setUser}) {
     const navigate = useNavigate()
     return (
-        <>
+        <div className='homepage-background'>
             <div className="split left">
         <button className="profile_button" onClick={()=>{
             navigate("/userpage")
@@ -21,7 +21,7 @@ function Home({setUser}) {
                     <SignUp/>
                 </div>
             </div>
-        </>
+        </div>
     )
 }
 

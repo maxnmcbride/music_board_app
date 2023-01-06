@@ -25,11 +25,7 @@ function Discussions({setSelectedDiscussion}) {
     return (
         <div>
             <nav className="links">
-
-                <Link to="/"><button>Home</button></Link>
-
                 <Link to="/userpage"><button>My Profile</button></Link>
-                
             </nav>
             <h1 className="discussions_page">All Discussions</h1>
             <h5 className="discussions_list">{mappedDiscussions}</h5>

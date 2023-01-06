@@ -2,7 +2,6 @@ class CommentsController < ApplicationController
     # have to develop full CRUD capability for users to post, read, edit, and delete comments
     
     def create
-        debugger
         # this is handling the user_id params from the back end
         # instead of from the front end -- this is preferred way to handle
         params[:user_id] = session[:user_id]
