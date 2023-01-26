@@ -2,6 +2,26 @@ import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import EachDiscussion from './EachDiscussion';
 
+function Input() {
+    const [input, setInput] = useState("")
+    function sendComment(e){
+        e.preventDefault()
+
+    }
+
+
+        
+    return (
+        <div className="input">
+            <input type="text" placeholder="Comment..."></input>
+            <div className="send">
+               
+                
+            </div>
+        </div>
+    )
+}
+
 function Discussions() {
     const [discussions, setDiscussions] = useState([])
 
@@ -37,6 +57,7 @@ function Discussions() {
             </nav>
             <h1>All Forums</h1>
             {mappedDiscussions}
+            <button OnClick={sendComment}>Submit</button>
 
             {/* WE need a discussion board built out here, we need
             A text input
